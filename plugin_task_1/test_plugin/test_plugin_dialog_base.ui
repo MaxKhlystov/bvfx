@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TestPluginDialog</class>
+ <widget class="QDialog" name="TestPluginDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Pedestrian Accessibility</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   
+   <!-- Выбор точек -->
+   <widget class="QGroupBox" name="groupBox_points">
+    <property name="title">
+     <string>Точки (остановки)</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <widget class="QComboBox" name="comboBox_points"/>
+    </layout>
+   </widget>
+   
+   <!-- Выбор изолиний -->
+   <widget class="QGroupBox" name="groupBox_isolines">
+    <property name="title">
+     <string>Изолинии (высоты)</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <widget class="QComboBox" name="comboBox_isolines"/>
+    </layout>
+   </widget>
+   
+   <!-- Выбор населения -->
+   <widget class="QGroupBox" name="groupBox_citizens">
+    <property name="title">
+     <string>Население (дома)</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <widget class="QComboBox" name="comboBox_citizens"/>
+    </layout>
+   </widget>
+   
+   <!-- ID точек -->
+   <widget class="QGroupBox" name="groupBox_ids">
+    <property name="title">
+     <string>ID точек для обработки</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <widget class="QLineEdit" name="lineEdit_ids">
+      <property name="placeholderText">
+       <string>251, 250, 252, 869 (через запятую)</string>
+      </property>
+     </widget>
+    </layout>
+   </widget>
+   
+   <!-- Радиус -->
+   <widget class="QGroupBox" name="groupBox_radius">
+    <property name="title">
+     <string>Радиус доступности</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <widget class="QLineEdit" name="lineEdit_radius">
+      <property name="text">
+       <string>1000</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_radius">
+      <property name="text">
+       <string>метров</string>
+      </property>
+     </widget>
+    </layout>
+   </widget>
+   
+   <!-- Кнопки -->
+   <widget class="QDialogButtonBox" name="buttonBox">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="standardButtons">
+     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+    </property>
+   </widget>
+   
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>TestPluginDialog</receiver>
+   <slot>accept()</slot>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>TestPluginDialog</receiver>
+   <slot>reject()</slot>
+  </connection>
+ </connections>
+</ui>
